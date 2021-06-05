@@ -1,0 +1,8 @@
+for tweet in self.tweets:
+    #Append to temp so that we can store in csv later. I use encode UTF-8
+    self.tweetText.append(self.cleanTweet(tweet.text).encode('utf-8'))
+    
+    analysis = TextBlob(tweet.text)
+    # print(analysis.sentiment)  # print tweet's polarity
+    polarity += analysis.sentiment.polarity  
+# adding up polarities to find the average later
